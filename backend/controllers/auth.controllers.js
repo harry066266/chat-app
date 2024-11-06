@@ -3,16 +3,16 @@ import bcrypt from "bcryptjs";
 import generateTokenAndSetCookie from "../utils/generateToken.js";
 export const signup = async (req, res) => {
   try {
-    const { fullName, username, password, comfirmPassword, gender } = req.body;
-    if (password !== comfirmPassword) {
+    const { fullName, username, password, confirmPassword, gender } = req.body;
+    if (password !== confirmPassword) {
       return res.status(400).json({ error: "Password don't match" });
     }
     const user = await User.findOne({ username });
     if (user) {
       return res.status(400).json({ error: "Username already exists" });
     }
-    const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
-    const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+    const boyProfilePic = `https://api.dicebear.com/9.x/initials/svg?seed=${username}`;
+    const girlProfilePic = `https://api.dicebear.com/9.x/initials/svg?seed=${username}`;
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
