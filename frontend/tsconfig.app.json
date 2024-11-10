@@ -22,5 +22,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/declarations.d.ts","node_modules/react-dom/**/*"]
+  "include": ["src", "src/declarations.d.ts","node_modules/react-dom/**/*", "node_modules/react-dom/client.d.ts"]
 }
