@@ -22,8 +22,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "types": ["node", "react", "react-dom"],
-    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["src", "src/declarations.d.ts","node_modules/react-dom/**/*", "node_modules/react-dom/client.d.ts"]
 }
