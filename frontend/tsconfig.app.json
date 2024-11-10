@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "incremental": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -9,7 +9,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -20,9 +20,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-  
-
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/declarations.d.ts","node_modules/react-dom/**/*", "node_modules/react-dom/client.d.ts"]
+  "include": ["src"]
 }
