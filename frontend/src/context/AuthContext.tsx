@@ -8,8 +8,8 @@ import {
 } from "react";
 
 interface AuthContextType {
-  authUser: InputFields | null;
-  setAuthUser: Dispatch<SetStateAction<InputFields | null>>;
+  authUser: UserType | null;
+  setAuthUser: Dispatch<SetStateAction<UserType | null>>;
 }
 
 const AuthContext = createContext<AuthContextType>({
@@ -22,7 +22,7 @@ export const useAuthContext = () => {
 };
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
-  const [authUser, setAuthUser] = useState<InputFields | null>(
+  const [authUser, setAuthUser] = useState<UserType | null>(
     JSON.parse(localStorage.getItem("chat-user") || "null")
   );
 

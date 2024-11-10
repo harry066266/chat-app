@@ -14,9 +14,9 @@ interface GenderCheckboxProps {
 // 定义 AuthUser 类型，假设它有 id 和 name 等字段，你可以根据实际情况修改
 type ConversationType = {
   selectedConversation: UserType | null;
-  setSelectedConversation: (selectedConversation: UserType) => void;
-  messages: string[];
-  setMessages: (messages: string[]) => void;
+  setSelectedConversation: (selectedConversation: UserType|null) => void;
+  messages: MessageType[];
+  setMessages: (messages: MessageType[]) => void;
 };
 
 interface UserType {
@@ -35,3 +35,15 @@ interface ConType {
   emoji: string;
   lastIdx: boolean;
 }
+
+interface MessageType {
+  senderId: string;
+  receiverId: string;
+  message: string;
+  _id: string;
+  createdAt: string; // or Date if you plan to parse it
+  updatedAt: string; // or Date if you plan to parse it
+  __v: number;
+  shouldShake?: boolean
+};
+
