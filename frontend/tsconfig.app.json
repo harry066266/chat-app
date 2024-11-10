@@ -21,7 +21,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["vite"]
+  
 
   },
   "include": ["src", "src/declarations.d.ts","node_modules/react-dom/**/*", "node_modules/react-dom/client.d.ts"]
